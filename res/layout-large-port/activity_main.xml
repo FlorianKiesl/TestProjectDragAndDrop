@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/MainLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="left"
+        android:maxHeight="50dp"
+        android:minHeight="50dp" >
+
+        <ImageButton
+            android:id="@+id/imageButtonAddContext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="addContextInformation"
+            android:src="@drawable/add_context" />
+
+        <ImageButton
+            android:id="@+id/imageButtonShowContext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="showContextInformation"
+            android:src="@drawable/context" />
+
+        <TextView
+            android:id="@+id/textViewProcessTitle"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:maxHeight="30dp"
+            android:minHeight="30dp"
+            android:text="@string/process_title"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <ImageView
+            android:id="@+id/imageViewBin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bin" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textViewMainStack"
+                android:layout_width="250dp"
+                android:layout_height="190dp"
+                android:background="@drawable/stack"
+                android:text="@string/emty_main_stack"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/textViewSideStack"
+                android:layout_width="250dp"
+                android:layout_height="190dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/stack"
+                android:text="@string/emty_side_stack"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="vertical" >
+ 
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
