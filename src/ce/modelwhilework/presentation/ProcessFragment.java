@@ -1,12 +1,16 @@
-package com.example.draganddrop;
+package ce.modelwhilework.presentation;
 
+import ce.modelwhilework.data.*;
+import ce.modelwhilework.data.Process;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.ClipData;
+import android.support.v4.app.Fragment;
 import android.view.DragEvent;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.View.DragShadowBuilder;
 import android.view.View.OnDragListener;
 import android.view.View.OnTouchListener;
@@ -14,24 +18,22 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class ProcessFragment extends Fragment {
 
 	final String MAINSTACK = "MAINSTACK", SIDESTACK = "SIDESTACK",
 			MSGCARD = "MSGCARD", TASKCARD = "TASKCARD";
 	private Process process;
+	private View fragment;
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		fragment = inflater.inflate(R.layout.fragment_process, container, false);
+		
+		LinearLayout ll_Task = (LinearLayout) fragment.findViewById(R.id.LayoutWorkCard);
+		LinearLayout ll_Msg = (LinearLayout) fragment.findViewById(R.id.LayoutMsgCard);
 
-
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-
-		LinearLayout ll_Task = (LinearLayout) findViewById(R.id.LayoutWorkCard);
-		LinearLayout ll_Msg = (LinearLayout) findViewById(R.id.LayoutMsgCard);
-
-		LinearLayout ll_MainStack = (LinearLayout) findViewById(R.id.LayoutMainStack);
-		LinearLayout ll_SideStack = (LinearLayout) findViewById(R.id.LayoutSideStack);
-		ImageView iv_bin = (ImageView) findViewById(R.id.imageViewBin);
+		LinearLayout ll_MainStack = (LinearLayout) fragment.findViewById(R.id.LayoutMainStack);
+		LinearLayout ll_SideStack = (LinearLayout) fragment.findViewById(R.id.LayoutSideStack);
+		ImageView iv_bin = (ImageView) fragment.findViewById(R.id.imageViewBin);
 
 		// set tag definitions
 		ll_Task.setTag(TASKCARD);
@@ -49,6 +51,8 @@ public class MainActivity extends Activity {
 		// set drag listeners
 		ll_MainStack.setOnDragListener(new ChoiceDragListener());
 		iv_bin.setOnDragListener(new BinDragListener());
+		
+		return fragment;
 	}
 	
 	public void addContextInformation(View v) {
@@ -210,15 +214,15 @@ public class MainActivity extends Activity {
 
 	private void updateView() {
 
-		TextView tv_processTitle = (TextView) findViewById(R.id.textViewProcessTitle);
+		TextView tv_processTitle = (TextView) fragment.findViewById(R.id.textViewProcessTitle);
 		tv_processTitle.setText(process.getTitle());
 
 		// display main and side stack
-		TextView tv_mainstack = (TextView) findViewById(R.id.textViewMainStack);
-		TextView tv_sideStack = (TextView) findViewById(R.id.textViewSideStack);
+		TextView tv_mainstack = (TextView) fragment.findViewById(R.id.textViewMainStack);
+		TextView tv_sideStack = (TextView) fragment.findViewById(R.id.textViewSideStack);
 		
-		LinearLayout ll_MainStack = (LinearLayout) findViewById(R.id.LayoutMainStack);
-		LinearLayout ll_SideStack = (LinearLayout) findViewById(R.id.LayoutSideStack);
+		LinearLayout ll_MainStack = (LinearLayout) fragment.findViewById(R.id.LayoutMainStack);
+		LinearLayout ll_SideStack = (LinearLayout) fragment.findViewById(R.id.LayoutSideStack);
 
 		if (process.isMainStackEmpty()) {
 

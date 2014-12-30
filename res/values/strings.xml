@@ -2,8 +2,20 @@
 <resources>
 
     <string name="app_name">DragNDropDemo</string>
-    <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    
+    <string name="action_new">New Process</string>
+    <string name="action_open">Open Process</string>
+    <string name="action_export">Export Process</string>
+    <string name="action_close">Close Process</string>
+    <string name="action_closeall">Close All Processes</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    
     <string name="drag_drop">Click on the image to drag and drop</string>
     <string name="emty_main_stack">empty main stack</string>
     <string name="emty_side_stack">empty side stack</string>

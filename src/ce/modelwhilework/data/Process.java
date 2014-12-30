@@ -1,4 +1,4 @@
-package com.example.draganddrop;
+package ce.modelwhilework.data;
 
 import java.util.Stack;
 
@@ -44,7 +44,7 @@ public class Process extends Modus{
 		return true;
 	}
 	
-public boolean removeCardFromSideStack() {
+	public boolean removeCardFromSideStack() {
 		
 		try { SideStack.pop();}
 		catch (Exception e) { return false;	}
